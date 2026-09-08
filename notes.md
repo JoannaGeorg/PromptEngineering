@@ -44,7 +44,7 @@
       response = get_completion(prompt)
       print(response)
       ```
-    2. *Ask for a structured output like HTML or JSON.*
+    2. Ask for a structured output like HTML or JSON.
       - E.g.
       ```
       prompt = f"""
@@ -56,7 +56,7 @@
       response = get_completion(prompt)
       print(response)
       ```
-    3. *Ask and Check if conditions are satisfied.*
+    3. Ask and Check if conditions are satisfied.
       - E.g.
       ```
       text_1 = f"""
@@ -89,7 +89,7 @@
       print("Completion for Text 1:")
       print(response)
       ```
-    4. *Few-shot prompting.*
+    4. Few-shot prompting.
       - Give successful examples of completing task.
       - E.g.
       ```
