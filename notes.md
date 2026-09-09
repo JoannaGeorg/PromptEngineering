@@ -196,3 +196,48 @@
     - *Hallucination:* Makes statements that sound plausible but are not true.
       - Reducing Hallucinations:
         - Ask the model to first find relevent information then answer the question based on the relevent information.
+
+## Iterative
+
+- Iterative Prompt Development (Repeasted until satisfied with the result):
+  - Idea
+  - Implementation
+  - Experimental Result
+  - Error Analysis
+- Start with the idea and test it, if the result is not up to the standard, refine the idea - add more details and instructions - until the ideal result is reached.
+- E.g.
+  - *Iteration 1:*
+  ```
+  prompt = f"""
+  Your task is to help the marketing team create a descritpion for a product using a technical fact sheet.
+
+  Write a product description based on the information provided in the technical specifications delimited by triple backticks.
+
+  \`\`\` {text} \`\`\`
+  """
+  ```
+  - *Iteration 2:*
+  ```
+  prompt = f"""
+  Your task is to help the marketing team create a descritpion for a product using a technical fact sheet.
+
+  Write a product description based on the information provided in the technical specifications delimited by triple backticks.
+
+  Use at most 50 words.
+
+  \`\`\` {text} \`\`\`
+  """
+  ```
+  - *Iteration 3:*
+  ```
+  prompt = f"""
+  Your task is to help the marketing team create a descritpion for a product using a technical fact sheet.
+
+  Write a product description based on the information provided in the technical specifications delimited by triple backticks.
+
+  Use at most 50 words.
+  Include the product number in the description.
+
+  \`\`\` {text} \`\`\`
+  """
+  ```

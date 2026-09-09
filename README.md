@@ -14,5 +14,5 @@ To Do:
 
 To Do:
 - [ ] Create summarization prompts
-- [ ] Refine prompts based on output
+- [x] Refine prompts based on output
 - [ ] Generate concise and structured summaries
