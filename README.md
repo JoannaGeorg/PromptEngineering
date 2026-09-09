@@ -9,3 +9,10 @@ To Do:
 - [x] Improve vague prompts
 - [x] Compare different prompt structures
 - [x] Experiment with context and instructions
+
+### Task 2: Improving LLM Outputs
+
+To Do:
+- [x] Create summarization prompts
+- [x] Refine prompts based on output
+- [x] Generate concise and structured summaries
