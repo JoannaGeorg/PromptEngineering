@@ -231,7 +231,8 @@
   - *Iteration 3:*
   ```
   prompt = f"""
-  Your task is to help the marketing team create a descritpion for a product using a technical fact sheet.
+  Your task is to help the marketing team create a descritpion for \
+  a product using a technical fact sheet.
 
   Write a product description based on the information provided in the technical specifications delimited by triple backticks.
 
@@ -239,5 +240,52 @@
   Include the product number in the description.
 
   \`\`\` {text} \`\`\`
+  """
+  ```
+
+## Summarizing
+
+- Using the iterative process, create prompt to summarize a text.
+- The edit to summerize as per specific aspects, such as price, quality, sentiment, etc. from the given text.
+- E.g.
+  - *Iteration 1:*
+  ```
+  prompt = f"""
+  Your task is to generate a short summary of a product \
+  review from an ecommerce site. 
+
+  Summarize the review below, delimited by triple 
+  backticks, in at most 30 words. 
+
+  Review: \`\`\`{prod_review}\`\`\`
+  """
+  ```
+  - *Iteration 2:* Focus on shipping information.
+  ```
+  prompt = f"""
+  Your task is to generate a short summary of a product \
+  review from an ecommerce site to give feedback to the \
+  Shipping deparmtment. 
+
+  Summarize the review below, delimited by triple 
+  backticks, in at most 30 words, and focusing on any aspects \
+  that mention shipping and delivery of the product. 
+
+  Review: \`\`\`{prod_review}\`\`\`
+  """
+  ```
+- This method can also be used to sxtract specific information.
+- E.g.
+  ```
+  prompt = f"""
+  Your task is to extract relevant information from \ 
+  a product review from an ecommerce site to give \
+  feedback to the Shipping department. 
+
+  From the review below, delimited by triple quotes \
+  extract the information relevant to shipping and \ 
+  delivery. Limit to 30 words. 
+
+  Review: \`\`\`{prod_review}\`\`\`
   """
   ```

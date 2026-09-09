@@ -13,6 +13,6 @@ To Do:
 ### Task 2: Improving LLM Outputs
 
 To Do:
-- [ ] Create summarization prompts
+- [x] Create summarization prompts
 - [x] Refine prompts based on output
-- [ ] Generate concise and structured summaries
+- [x] Generate concise and structured summaries
