@@ -20,7 +20,7 @@ To Do:
 ### Task 3: Working with Information Using Prompts
 
 To Do:
-- [ ] Extract information from text
-- [ ] Perform classification/inference
+- [x] Extract information from text
+- [x] Perform classification/inference
 - [ ] Convert text into different formats
 - [ ] Generate structured responses

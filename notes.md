@@ -289,3 +289,115 @@
   Review: \`\`\`{prod_review}\`\`\`
   """
   ```
+
+## Inferring
+
+- Use for inferring sentiments and topics from information.
+
+- The different examples of tasks that can be performed:
+  
+  - **Positive/Negative Sentiment:**
+    - E.g.
+    ```
+    prompt = f"""
+    What is the sentiment of the following product review, 
+    which is delimited with triple backticks?
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+    OR
+    ```
+    prompt = f"""
+    What is the sentiment of the following product review, 
+    which is delimited with triple backticks?
+
+    Give your answer as a single word, either "positive" \
+    or "negative".
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Type of Emotion:**
+    - E.g.
+    ```
+    prompt = f"""
+    Identify a list of emotions that the writer of the \
+    following review is expressing. Include no more than \
+    five items in the list. Format your answer as a list of \
+    lower-case words separated by commas.
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Specific Emotion (Anger):**
+    - E.g.
+    ```
+    prompt = f"""
+    Is the writer of the following review expressing anger?\
+    The review is delimited with triple backticks. \
+    Give your answer as either yes or no.
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+
+  - **Extract Information:**
+    - E.g.
+    ```
+    prompt = f"""
+    Identify the following items from the review text: 
+    - Item purchased by reviewer
+    - Company that made the item
+
+    The review is delimited with triple backticks. \
+    Format your response as a JSON object with \
+    "Item" and "Brand" as the keys. 
+    If the information isn't present, use "unknown" \
+    as the value.
+    Make your response as short as possible.
+      
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Perform Multiple Tasks:**
+    - E.g.
+    ```
+    prompt = f"""
+    Identify the following items from the review text: 
+    - Sentiment (positive or negative)
+    - Is the reviewer expressing anger? (true or false)
+    - Item purchased by reviewer
+    - Company that made the item
+
+    The review is delimited with triple backticks. \
+    Format your response as a JSON object with \
+    "Sentiment", "Anger", "Item" and "Brand" as the keys.
+    If the information isn't present, use "unknown" \
+    as the value.
+    Make your response as short as possible.
+    Format the Anger value as a boolean.
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Inferring Topics:**
+    - E.g.
+    ```
+    prompt = f"""
+    Determine five topics that are being discussed in the \
+    following text, which is delimited by triple backticks.
+
+    Make each item one or two words long. 
+
+    Format your response as a list of items separated by commas.
+
+    Text sample: '''{story}'''
+    """
+    ```
+  
+  
