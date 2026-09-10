@@ -22,5 +22,5 @@ To Do:
 To Do:
 - [x] Extract information from text
 - [x] Perform classification/inference
-- [ ] Convert text into different formats
-- [ ] Generate structured responses
+- [x] Convert text into different formats
+- [x] Generate structured responses

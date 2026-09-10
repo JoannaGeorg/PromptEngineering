@@ -400,4 +400,64 @@
     """
     ```
   
+## Transforming
+
+- LLMs csn be used for text transformation tasks such as:
+
+  - **Translation:**
+    - *Translating the text:*
+      ```
+      prompt = f"""
+      Translate the following English text to Spanish: \ 
+      \`\`\`Hi, I would like to order a blender\`\`\`
+      """
+      ```
+    - *Identifing the Language:*
+      ```
+      prompt = f"""
+      Tell me which language this is: 
+      \`\`\`Combien coûte le lampadaire?\`\`\`
+      """
+      ```
+    - *Translating with Form:*
+      ```
+      prompt = f"""
+      Translate the following text to Spanish in both the \
+      formal and informal forms: 
+      'Would you like to order a pillow?'
+      """
+      ```
   
+  - **Tone Transformation:**
+    - E.g.
+    ```
+    prompt = f"""
+    Translate the following from slang to a business letter: 
+    'Dude, This is Joe, check out this spec on this standing lamp.'
+    """
+    ```
+  
+  - **Format Conversion:**
+    - E.g.
+    ```
+    data_json = { "resturant employees" :[ 
+        {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+        {"name":"Bob", "email":"bob32@gmail.com"},
+        {"name":"Jai", "email":"jai87@gmail.com"}
+    ]}
+
+    prompt = f"""
+    Translate the following python dictionary from JSON to an HTML \
+    table with column headers and title: {data_json}
+    """
+    ```
+
+  - **Spelling or Grammer Check:**
+    - E.g.
+    ```
+    prompt = f"""Proofread and correct the following text
+    and rewrite the corrected version. If you don't find
+    and errors, just say "No errors found". Don't use 
+    any punctuation around the text:
+    \`\`\`{t}\`\`\`"""
+    ```
