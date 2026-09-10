@@ -289,3 +289,175 @@
   Review: \`\`\`{prod_review}\`\`\`
   """
   ```
+
+## Inferring
+
+- Use for inferring sentiments and topics from information.
+
+- The different examples of tasks that can be performed:
+  
+  - **Positive/Negative Sentiment:**
+    - E.g.
+    ```
+    prompt = f"""
+    What is the sentiment of the following product review, 
+    which is delimited with triple backticks?
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+    OR
+    ```
+    prompt = f"""
+    What is the sentiment of the following product review, 
+    which is delimited with triple backticks?
+
+    Give your answer as a single word, either "positive" \
+    or "negative".
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Type of Emotion:**
+    - E.g.
+    ```
+    prompt = f"""
+    Identify a list of emotions that the writer of the \
+    following review is expressing. Include no more than \
+    five items in the list. Format your answer as a list of \
+    lower-case words separated by commas.
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Specific Emotion (Anger):**
+    - E.g.
+    ```
+    prompt = f"""
+    Is the writer of the following review expressing anger?\
+    The review is delimited with triple backticks. \
+    Give your answer as either yes or no.
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+
+  - **Extract Information:**
+    - E.g.
+    ```
+    prompt = f"""
+    Identify the following items from the review text: 
+    - Item purchased by reviewer
+    - Company that made the item
+
+    The review is delimited with triple backticks. \
+    Format your response as a JSON object with \
+    "Item" and "Brand" as the keys. 
+    If the information isn't present, use "unknown" \
+    as the value.
+    Make your response as short as possible.
+      
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Perform Multiple Tasks:**
+    - E.g.
+    ```
+    prompt = f"""
+    Identify the following items from the review text: 
+    - Sentiment (positive or negative)
+    - Is the reviewer expressing anger? (true or false)
+    - Item purchased by reviewer
+    - Company that made the item
+
+    The review is delimited with triple backticks. \
+    Format your response as a JSON object with \
+    "Sentiment", "Anger", "Item" and "Brand" as the keys.
+    If the information isn't present, use "unknown" \
+    as the value.
+    Make your response as short as possible.
+    Format the Anger value as a boolean.
+
+    Review text: '''{lamp_review}'''
+    """
+    ```
+  
+  - **Inferring Topics:**
+    - E.g.
+    ```
+    prompt = f"""
+    Determine five topics that are being discussed in the \
+    following text, which is delimited by triple backticks.
+
+    Make each item one or two words long. 
+
+    Format your response as a list of items separated by commas.
+
+    Text sample: '''{story}'''
+    """
+    ```
+  
+## Transforming
+
+- LLMs csn be used for text transformation tasks such as:
+
+  - **Translation:**
+    - *Translating the text:*
+      ```
+      prompt = f"""
+      Translate the following English text to Spanish: \ 
+      \`\`\`Hi, I would like to order a blender\`\`\`
+      """
+      ```
+    - *Identifing the Language:*
+      ```
+      prompt = f"""
+      Tell me which language this is: 
+      \`\`\`Combien coûte le lampadaire?\`\`\`
+      """
+      ```
+    - *Translating with Form:*
+      ```
+      prompt = f"""
+      Translate the following text to Spanish in both the \
+      formal and informal forms: 
+      'Would you like to order a pillow?'
+      """
+      ```
+  
+  - **Tone Transformation:**
+    - E.g.
+    ```
+    prompt = f"""
+    Translate the following from slang to a business letter: 
+    'Dude, This is Joe, check out this spec on this standing lamp.'
+    """
+    ```
+  
+  - **Format Conversion:**
+    - E.g.
+    ```
+    data_json = { "resturant employees" :[ 
+        {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
+        {"name":"Bob", "email":"bob32@gmail.com"},
+        {"name":"Jai", "email":"jai87@gmail.com"}
+    ]}
+
+    prompt = f"""
+    Translate the following python dictionary from JSON to an HTML \
+    table with column headers and title: {data_json}
+    """
+    ```
+
+  - **Spelling or Grammer Check:**
+    - E.g.
+    ```
+    prompt = f"""Proofread and correct the following text
+    and rewrite the corrected version. If you don't find
+    and errors, just say "No errors found". Don't use 
+    any punctuation around the text:
+    \`\`\`{t}\`\`\`"""
+    ```

@@ -16,3 +16,11 @@ To Do:
 - [x] Create summarization prompts
 - [x] Refine prompts based on output
 - [x] Generate concise and structured summaries
+
+### Task 3: Working with Information Using Prompts
+
+To Do:
+- [x] Extract information from text
+- [x] Perform classification/inference
+- [x] Convert text into different formats
+- [x] Generate structured responses
