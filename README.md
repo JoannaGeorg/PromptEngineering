@@ -24,3 +24,10 @@ To Do:
 - [x] Perform classification/inference
 - [x] Convert text into different formats
 - [x] Generate structured responses
+
+### Task 4: Conversational AI
+
+To Do:
+- [x] Build a simple chatbot
+- [x] Experiment with system and user instructions
+- [x] Improve conversational responses
