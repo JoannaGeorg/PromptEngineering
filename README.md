@@ -28,6 +28,6 @@ To Do:
 ### Task 4: Conversational AI
 
 To Do:
-- [ ] Build a simple chatbot
-- [ ] Experiment with system and user instructions
-- [ ] Improve conversational responses
+- [x] Build a simple chatbot
+- [x] Experiment with system and user instructions
+- [x] Improve conversational responses
